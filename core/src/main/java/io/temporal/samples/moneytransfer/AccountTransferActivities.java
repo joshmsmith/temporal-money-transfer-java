@@ -33,4 +33,6 @@ public interface AccountTransferActivities {
       String idempotencyKey, float amountDollars, ExecutionScenarioObj scenario);
 
   boolean undoWithdraw(float amountDollars);
+
+  boolean doSketchyStuff(float amountDollars);
 }

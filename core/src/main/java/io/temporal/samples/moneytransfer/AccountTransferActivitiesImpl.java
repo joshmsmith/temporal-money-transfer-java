@@ -89,6 +89,16 @@ public class AccountTransferActivitiesImpl implements AccountTransferActivities 
     return true;
   }
 
+  @Override
+  public boolean doSketchyStuff(float amountDollars) {
+    log.info("\n\nDoing Sketchy Stuff with these dollars: $" + amountDollars + " \n");
+    if (false) {
+      throw new RuntimeException(); // we doing bad things
+    }
+
+    return true;
+  }
+
   private static String simulateDelay(int seconds) {
     String url = ServerInfo.getWebServerURL() + "/simulateDelay?s=" + seconds;
     log.info("\n\n/API/simulateDelay URL: " + url + "\n");

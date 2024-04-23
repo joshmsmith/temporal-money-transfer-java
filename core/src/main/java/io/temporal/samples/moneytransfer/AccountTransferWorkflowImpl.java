@@ -117,7 +117,7 @@ public class AccountTransferWorkflowImpl implements AccountTransferWorkflow {
       // throw an error to simulate a bug in the workflow
       // uncomment the following line and restart workers to 'fix' the bug
       log.info("\n\nSimulating workflow task failure.\n\n");
-      throw new RuntimeException("Workflow Bug!");
+      accountTransferActivities.doSketchyStuff(params.getAmount());
     }
 
     if (params.getScenario() == ExecutionScenarioObj.ADVANCED_VISIBILITY) {

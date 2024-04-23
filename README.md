@@ -28,17 +28,30 @@ export TEMPORAL_MONEYTRANSFER_TASKQUEUE="MoneyTransferJava"
 
 Note: Use a Java 18 SDK.
 
-Start a worker:
+Start a worker encrypting payloads:
 
 ```bash
 ENCRYPT_PAYLOADS=true ./gradlew -q execute -PmainClass=io.temporal.samples.moneytransfer.AccountTransferWorker --console=plain
 ```
 
-Run the money transfer web UI:
+Run the money transfer web UI encrypting payloads:
 
 ```bash
 ENCRYPT_PAYLOADS=true ./gradlew -q execute -PmainClass=io.temporal.samples.moneytransfer.web.WebServer --console=plain
 ```
+
+Or, Start a worker without encrypting payloads:
+
+```bash
+ENCRYPT_PAYLOADS=false ./gradlew -q execute -PmainClass=io.temporal.samples.moneytransfer.AccountTransferWorker --console=plain
+```
+
+Run the money transfer web UI without encrypting payloads:
+
+```bash
+ENCRYPT_PAYLOADS=false ./gradlew -q execute -PmainClass=io.temporal.samples.moneytransfer.web.WebServer --console=plain
+```
+
 Then navigate to `http://localhost:7070/`
 
 ## Demo various failures and recoveries
